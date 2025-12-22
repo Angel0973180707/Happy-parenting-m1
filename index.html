@@ -1,1 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>幸福教養工具箱｜模組1｜大人先穩 v1.0</title>
 
+  <meta name="theme-color" content="#b58b54" />
+  <meta name="background-color" content="#fbf6e9" />
+  <meta name="description" content="模組1｜現場急救×錦囊妙計×每日練功×回饋獎勵" />
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icon-192.png" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="title">幸福教養工具箱</div>
+        <div class="sub">模組1｜大人先穩：急救 × 錦囊 × 每日練功</div>
+      </div>
+      <button class="btn ghost small" data-action="toggleHelp" type="button">安裝</button>
+    </header>
+
+    <!-- 快速入口 -->
+    <section class="card hero">
+      <div class="heroTitle">現在先讓自己穩定一點</div>
+      <button class="btn big" data-action="startRescue" type="button">撐不住了｜先急救</button>
+      <div class="tiny">先做 30 秒就好。做完再說。</div>
+    </section>
+
+    <!-- 1 現場急救 -->
+    <section class="card">
+      <div class="h2">1｜現場急救（30 秒）</div>
+
+      <div class="quote" id="rescueLine">按上面的「先急救」，就會開始。</div>
+
+      <div class="timerRow">
+        <div class="timer" id="timerText">00:30</div>
+        <div class="phase" id="phaseText">準備</div>
+      </div>
+
+      <div class="row">
+        <button class="btn" data-action="startRescue" type="button">開始</button>
+        <button class="btn ghost" data-action="stopRescue" type="button">停止</button>
+        <button class="btn ghost" data-action="logDone" data-kind="rescue" type="button">完成一次急救</button>
+      </div>
+
+      <div class="tiny">提示：吸 4 秒、吐 6 秒，跟著走就好。</div>
+    </section>
+
+    <!-- 2 錦囊妙計 -->
+    <section class="card">
+      <div class="h2">2｜錦囊妙計</div>
+
+      <div class="twoCols">
+        <div>
+          <div class="h3">心裡想的（先讓心裡穩定一點）</div>
+          <button class="btn" data-action="pickInner" type="button">給一句</button>
+          <div class="quote" id="innerOut">（會出現一句內在提示）</div>
+        </div>
+        <div>
+          <div class="h3">說出口的（現在說得出口的話）</div>
+          <button class="btn" data-action="pickOuter" type="button">給一句</button>
+          <div class="quote" id="outerOut">（會出現一句可說出口的話）</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn ghost" data-action="logDone" data-kind="tips" type="button">用了一次錦囊</button>
+      </div>
+    </section>
+
+    <!-- 3 每日練功 -->
+    <section class="card">
+      <div class="h2">3｜每日練功（點一下就算）</div>
+      <div class="quote" id="dailyQ">（今天練功題目會出現在這裡）</div>
+
+      <div class="row">
+        <button class="btn" data-action="dailyPick" data-choice="done" type="button">有做到</button>
+        <button class="btn" data-action="dailyPick" data-choice="almost" type="button">差一點</button>
+        <button class="btn" data-action="dailyPick" data-choice="next" type="button">下次再練</button>
+      </div>
+
+      <div class="tiny">不打卡、不評分；願意回來就很好。</div>
+    </section>
+
+    <!-- 4 回饋獎勵 -->
+    <section class="card">
+      <div class="h2">4｜回饋獎勵</div>
+
+      <div class="badgeRow">
+        <span class="badge" id="presenceBadge">最近有回來</span>
+        <span class="tiny" id="presenceText">願意回來，就在路上。</span>
+      </div>
+
+      <div class="bar">
+        <div class="fill" id="seedFill"></div>
+      </div>
+      <div class="meta">
+        <span id="seedMeta">累積：0</span>
+        <button class="btn ghost small" data-action="softReset" type="button">輕清空</button>
+      </div>
+
+      <div class="quote" id="praiseOut">（完成任一項會出現回饋）</div>
+    </section>
+
+    <!-- 安裝教學 -->
+    <section class="card hidden" id="helpBox">
+      <div class="h2">安裝到主畫面</div>
+      <div class="tiny">
+        Android：瀏覽器右上角「⋮」→ 加到主畫面<br/>
+        iPhone：Safari 分享 → 加到主畫面
+      </div>
+      <div class="row">
+        <button class="btn" id="btnInstall" disabled type="button">安裝（可用會亮）</button>
+        <button class="btn ghost" data-action="toggleHelp" type="button">關閉</button>
+      </div>
+    </section>
+
+    <footer class="footer tiny">
+      v1.0｜模組1重寫版（穩定可用）｜幸福教養工具箱
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
