@@ -1,11 +1,19 @@
 :root{
-  --bg:#fbf6e9;
+  --bg:#fff8ee;               /* 更亮的米杏底 */
   --ink:#2b2a26;
-  --muted:#6a6257;
+  --muted:#6f675c;
+
   --card:#ffffff;
-  --line:#eadfcf;
-  --brand:#b58b54;
-  --brand2:#d7b98b;
+
+  --brand:#f0a04b;            /* 主色：暖橘 */
+  --brand2:#f7c873;           /* 輔色：蜂蜜黃 */
+
+  --accent-green:#9fd3a7;     /* 練功 */
+  --accent-blue:#9ecae1;      /* 回饋 */
+  --accent-pink:#f4b6c2;      /* 錦囊 */
+  --accent-lav:#c7b6f4;       /* 輕點綴 */
+
+  --line:#f1dfc8;
   --shadow:0 10px 25px rgba(0,0,0,.08);
   --r:18px;
 }
@@ -20,9 +28,10 @@ body{
 }
 
 .app{max-width:920px;margin:0 auto;padding:14px}
+
 .topbar{
   position:sticky; top:0; z-index:10;
-  background:rgba(251,246,233,.92);
+  background:rgba(255,248,238,.92);
   backdrop-filter:saturate(140%) blur(8px);
   border:1px solid var(--line);
   border-radius:16px;
@@ -30,6 +39,7 @@ body{
   display:flex; justify-content:space-between; align-items:center;
   box-shadow:var(--shadow);
 }
+
 .title{font-weight:900;font-size:18px}
 .sub{font-size:12px;color:var(--muted);margin-top:2px}
 
@@ -42,8 +52,27 @@ body{
   margin-top:12px;
 }
 
+/* ✅ 分區活潑但不吵（只改底色氣氛） */
+.card.hero{
+  background:linear-gradient(180deg, rgba(247,200,115,.25), rgba(255,255,255,1));
+  border-color:rgba(240,160,75,.35);
+}
+.card.rescue{
+  background:linear-gradient(180deg, rgba(240,160,75,.12), rgba(255,255,255,1));
+}
+.card.tips{
+  background:linear-gradient(180deg, rgba(244,182,194,.18), rgba(255,255,255,1));
+}
+.card.practice{
+  background:linear-gradient(180deg, rgba(159,211,167,.18), rgba(255,255,255,1));
+}
+.card.reward{
+  background:linear-gradient(180deg, rgba(158,202,225,.18), rgba(255,255,255,1));
+}
+
 .heroTitle{font-weight:900;font-size:18px;margin-bottom:10px}
-.tiny{font-size:12px;color:var(--muted);line-height:1.5}
+
+.tiny{font-size:12px;color:var(--muted);line-height:1.55}
 .footer{margin:14px 2px 4px}
 
 .h2{font-weight:900;font-size:16px;margin-bottom:10px}
@@ -57,22 +86,25 @@ body{
   padding:12px 12px;
   font-weight:900;
   cursor:pointer;
+  box-shadow:0 8px 18px rgba(240,160,75,.22);
 }
+.btn:hover{filter:brightness(1.02)}
 .btn.big{width:100%; padding:14px 12px; font-size:16px}
 .btn.ghost{
   background:transparent;
   color:var(--ink);
   border:1px solid var(--line);
+  box-shadow:none;
 }
 .btn.small{padding:8px 10px; font-size:12px}
 .btn:disabled{opacity:.45; cursor:not-allowed}
 
 .quote{
-  border:1px dashed rgba(181,139,84,.55);
+  border:1px dashed rgba(240,160,75,.55);
   background:#fffaf0;
   border-radius:14px;
   padding:10px 12px;
-  line-height:1.55;
+  line-height:1.6;
   margin-top:10px;
 }
 
@@ -93,8 +125,8 @@ body{
 .phase{
   font-weight:900;
   color:#5a3f1e;
-  background:rgba(181,139,84,.18);
-  border:1px solid rgba(181,139,84,.35);
+  background:rgba(247,200,115,.35);
+  border:1px solid rgba(240,160,75,.35);
   padding:8px 10px;
   border-radius:999px;
 }
@@ -104,9 +136,9 @@ body{
 
 .badgeRow{display:flex; gap:10px; align-items:center}
 .badge{
-  background:rgba(181,139,84,.18);
-  border:1px solid rgba(181,139,84,.35);
-  color:#5a3f1e;
+  background:rgba(158,202,225,.28);
+  border:1px solid rgba(158,202,225,.55);
+  color:#214a63;
   border-radius:999px;
   padding:6px 10px;
   font-weight:900;
