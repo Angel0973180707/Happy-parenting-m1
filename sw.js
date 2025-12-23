@@ -1,4 +1,4 @@
-const CACHE = "HP_M1_V1_0_0"; // 以後更新就改版本字串
+const CACHE = "HP_M1_V1_0_2"; // 以後更新就改版本字串
 const ASSETS = [
   "./",
   "./index.html",
